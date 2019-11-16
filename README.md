@@ -16,9 +16,10 @@
   - ERROR level指出虽然发生错误事件，但仍然不影响系统的继续运行。一般异常处理等情况都需要ERROR
   - FATAL level指出每个严重的错误事件将会导致应用程序的退出
 - @Mapper 通过注解@Mapper，实现mybatis注解，构造实现类让其他类可以引用。 @MapperScan 在application配置，扫mapper，就无需@Mapper了。
-- 项目的继承关系 DAO层 BaseDao<T>-StudentDao extends BaseDao<Student>(UserDao extends BaseDao<User>)
-- service层 BaseService<T>-StudentService extends BaseService<Student>(UserService extends BaseService<User>)
-- service层 BaseService<T>- abstract BaseServiceImpl<T>(abstract getMapper())-StudentServiceImpl extends BaseServiceImpl<Student> implements StudentService
+- 项目的继承关系 
+  - DAO层 BaseDao<T>-StudentDao extends BaseDao<Student>(UserDao extends BaseDao<User>)
+  - service层 BaseService<T>-StudentService extends BaseService<Student>(UserService extends BaseService<User>)
+  - service层 BaseService<T>- abstract BaseServiceImpl<T>(abstract getMapper())-StudentServiceImpl extends BaseServiceImpl<Student> implements StudentService
 - 多数据源开发 
   - @MapperScan扫描mapper，构造DruidDataSource注入配置文件,配置DataSourceTransactionManager开启spring事务 
   - @Primary可以确定默认首选的bean
@@ -32,4 +33,6 @@
   - 是否将参数offset作为PageNum使用,properties.setProperty("offsetAsPageNum", "true");
   - 是否进行count查询,properties.setProperty("rowBoundsWithCount", "true");
   - return pagehelper
-       
+- mybatis 可以设置<parametermap> 和 <sql>(简化要搜索的数据，后面可以直接导入)
+  - <sql id="test"> <include refid="test">导入数据
+  - 利用<where> 代替 where 1=1。。。
