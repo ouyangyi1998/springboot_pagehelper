@@ -1,4 +1,5 @@
 # springboot+mybatis+druid多数据源+pagehelper 
+- 原代码 https://github.com/xuwujing/springBoot-study
 - 两个数据源通过分别在application.properties中配置注入数据，datasource.type选择druid，minIdle（最小空闲） maxActive （最大活跃）maxWait（最大等待时间）
 - 目前Spring Boot中默认支持的连接池有dbcp,dbcp2, tomcat, hikari三种连接池。由于Druid暂时不在Spring Boot中的直接支持，故需要进行配置信息的定制
   - timeBetweenEvictionRunsMillis 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
